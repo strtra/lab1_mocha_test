@@ -8,10 +8,10 @@ afterEach(() => {
 it("介紹其它功能", () => {
     console.log("haha")
 })
----------------------------------
-    before(() => {
-        console.log("一次性的啟動")
-    })
+
+before(() => {
+    console.log("一次性的啟動")
+})
 after(() => {
     console.log("一次性的收尾")
 })
