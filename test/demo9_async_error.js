@@ -16,9 +16,19 @@ function failSync() {
 }
 describe("非happy path的處理", () => {
     it("直接執行會有exception", () => {
-        //failSync()
+        try {
+            failSync()
+        } catch (e) {
+            console.log("error happened!")
+            //assert.ifError(e, "在這 有顯示出錯誤")
+        }
     })
     it("assert", async () => {
+        try {
+            await failAsync()
+        } catch (e) {
+            console.log("非同步的error happened!")
+        }
         //return failAsync().catch(e => assert.ifError(e, "HAHA"))
     })
     it("expect", async () => {
