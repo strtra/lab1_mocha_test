@@ -13,7 +13,19 @@ function failAsync() {
 }
 function failSync() {
     throw new Error("HAHA")
+    //return 50
 }
+describe("例外的檢查", () => {
+    it("failSync有例外", () => {
+        assert.throws(failSync)
+    })
+    it("failSync有例外2", () => {
+        expect(failSync).to.throw()
+    })
+    it("failSync有例外3", () => {
+        failSync.should.throw()
+    })
+})
 describe("非happy path的處理", () => {
     it("直接執行會有exception", () => {
         try {
